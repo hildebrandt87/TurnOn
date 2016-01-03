@@ -1,0 +1,9 @@
+c:\users\kai\documents\visual studio 2012\Projects\TurnOn\TurnOn\bin\Debug\TurnOn.exe.config
+c:\users\kai\documents\visual studio 2012\Projects\TurnOn\TurnOn\bin\Debug\TurnOn.exe
+c:\users\kai\documents\visual studio 2012\Projects\TurnOn\TurnOn\bin\Debug\TurnOn.pdb
+c:\users\kai\documents\visual studio 2012\Projects\TurnOn\TurnOn\obj\Debug\TurnOn.Form1.resources
+c:\users\kai\documents\visual studio 2012\Projects\TurnOn\TurnOn\obj\Debug\TurnOn.Properties.Resources.resources
+c:\users\kai\documents\visual studio 2012\Projects\TurnOn\TurnOn\obj\Debug\TurnOn.csproj.GenerateResource.Cache
+c:\users\kai\documents\visual studio 2012\Projects\TurnOn\TurnOn\obj\Debug\TurnOn.exe
+c:\users\kai\documents\visual studio 2012\Projects\TurnOn\TurnOn\obj\Debug\TurnOn.pdb
+C:\Users\Kai\documents\visual studio 2012\Projects\TurnOn\TurnOn\obj\Debug\TurnOn.csprojResolveAssemblyReference.cache
