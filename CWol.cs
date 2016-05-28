@@ -13,7 +13,7 @@ namespace TurnOn
         //*Übergabe des MAC Adresse als byte Array
         public void WakeOnLan(byte[] mac)
         {
-
+            //Test 
             //Gesendet an Broadcast 255.255.255.0  Port:40000
             UdpClient Client = new UdpClient();
             Client.Connect(IPAddress.Broadcast, 40000);
