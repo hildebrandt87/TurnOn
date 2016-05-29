@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:TurnOn"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Margin="-104,0,-225,0">
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="32" Margin="541,32,0,0" VerticalAlignment="Top" Width="69"/>
+    <Grid>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Height="24" Margin="41,42,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </UserControl>
