@@ -13,12 +13,11 @@ namespace TurnOn
         //*Übergabe des MAC Adresse als byte Array
         public void WakeOnLan(byte[] mac)
         {
-            //Test 
+
             //Gesendet an Broadcast 255.255.255.0  Port:40000
             UdpClient Client = new UdpClient();
             Client.Connect(IPAddress.Broadcast, 40000);
 
-            // nochmals prüfen
             byte[] packet = new byte[17 * 6];
 
             //byte array füllen
@@ -46,7 +45,9 @@ namespace TurnOn
             byte[] ret = new byte[6];
             try
             {
+                
                 string[] tmp = mac.Split(':', '-');
+              
                 if (tmp.Length != 6)
                 {
                     //tmp = mac.Split('.');
@@ -63,7 +64,7 @@ namespace TurnOn
                             ret[i / 2] = byte.Parse(mac.Substring(i, 2), System.Globalization.NumberStyles.HexNumber);
                 }
                 else
-                    for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 6; i++)
                         ret[i] = byte.Parse(tmp[i], System.Globalization.NumberStyles.HexNumber);
             }
             catch
