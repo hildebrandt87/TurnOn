@@ -42,8 +42,6 @@ namespace TurnOn
             aTimer.Elapsed += aTimer_Elapsed;
             aTimer.Enabled = true;
 
-            //war ein test wird nicht benötigt
-            //this.backgroundWorker1.RunWorkerAsync();
 
         }
 
