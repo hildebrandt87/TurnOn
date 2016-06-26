@@ -38,3 +38,4 @@ C:\Users\Kai\Source\Repos\TurnOn\bin\Debug\TurnOn.pdb
 C:\Users\Kai\Source\Repos\TurnOn\bin\Debug\yo\TurnOn.resources.dll
 C:\Users\Kai\Source\Repos\TurnOn\obj\Debug\TurnOn.exe.manifest
 C:\Users\Kai\Source\Repos\TurnOn\obj\Debug\TurnOn.application
+C:\Users\Kai\Source\Repos\TurnOn\obj\Debug\TurnOn.csprojResolveAssemblyReference.cache

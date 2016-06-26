@@ -66,19 +66,14 @@ namespace TurnOn
         {
             string name = null;
 
-            try
-            {
+
                 RegistryKey BaseKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Default);
                 RegistryKey Key = BaseKey.OpenSubKey("TurnOnSettings");
 
                 //Werte holen
                 name = Key.GetValue("Servername").ToString();
 
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.ToString());
-            }
+
             return name;
         }
 

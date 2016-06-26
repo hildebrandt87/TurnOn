@@ -21,20 +21,6 @@ namespace TurnOn
         {
             InitializeComponent();
 
-            //Eingestellter Server
-            txb_EingestelltServer.Text = CReg.Get_Servername();
-            tbx_ServerName.Text = CReg.Get_Servername();
-
-            //username einlesen
-            tbx_UserName.Text = CReg.Get_Username();
-
-            //Password einlesen
-            tbx_ServerPW.Text = CReg.Get_Password();
-
-            //Hex einlesen
-            tbx_Hexdata.Text = CReg.Get_Hex();
-
-
             //////////////////////////////////////////////////
             ////////////////TIMER////////////////////////////
 
@@ -49,8 +35,10 @@ namespace TurnOn
 
         async void aTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
+          
             try
             {
+                
                 IPHostEntry hostName = Dns.GetHostByName(CReg.Get_Servername());
 
                 //InvokeRequired dient nur als Abfrage damit der Thread Save ausgeführt werden kann !
@@ -129,6 +117,7 @@ namespace TurnOn
         private void Btn_SaveReg_Click(object sender, EventArgs e)
         {
             //Daten aus Textboxen auslesen
+            // und in Reg ablegen
             string local_servername = tbx_ServerName.Text.ToString();
             string local_username = tbx_UserName.Text.ToString();
             string local_password = tbx_ServerPW.Text.ToString();
@@ -152,5 +141,21 @@ namespace TurnOn
 
         }
 
+        private void btn_laden_Click(object sender, EventArgs e)
+        {
+            //Daten aus Reg laden 
+            //Eingestellter Server
+            txb_EingestelltServer.Text = CReg.Get_Servername();
+            tbx_ServerName.Text = CReg.Get_Servername();
+
+            //username einlesen
+            tbx_UserName.Text = CReg.Get_Username();
+
+            //Password einlesen
+            tbx_ServerPW.Text = CReg.Get_Password();
+
+            //Hex einlesen
+            tbx_Hexdata.Text = CReg.Get_Hex();
+        }
     }
 }
