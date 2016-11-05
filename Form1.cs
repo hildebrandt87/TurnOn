@@ -157,5 +157,12 @@ namespace TurnOn
             //Hex einlesen
             tbx_Hexdata.Text = CReg.Get_Hex();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CNetworkScan StartScan = new CNetworkScan();
+            StartScan.SearchOnline();
+            StartScan = null;
+        }
     }
 }
