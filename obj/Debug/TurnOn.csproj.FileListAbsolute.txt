@@ -55,3 +55,6 @@ C:\Users\Hilde\Documents\GitHub\TurnOn\TurnOn\obj\Debug\TurnOn.exe.manifest
 C:\Users\Hilde\Documents\GitHub\TurnOn\TurnOn\obj\Debug\TurnOn.application
 C:\Users\Hilde\Documents\GitHub\TurnOn\TurnOn\obj\Debug\TurnOn.exe
 C:\Users\Hilde\Documents\GitHub\TurnOn\TurnOn\obj\Debug\TurnOn.pdb
+C:\Users\Kai\Documents\code\TurnOn\bin\Debug\TurnOn.exe.config
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.exe
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.pdb

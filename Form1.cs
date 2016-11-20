@@ -16,9 +16,12 @@ namespace TurnOn
 {
     public partial class Form1 : Form
     {
+        public Form MyForm;
 
         public Form1()
         {
+
+            MyForm = Form1.ActiveForm;
             InitializeComponent();
 
             //////////////////////////////////////////////////
@@ -161,7 +164,6 @@ namespace TurnOn
         private void button1_Click(object sender, EventArgs e)
         {
             CNetworkScan StartScan = new CNetworkScan();
-            StartScan.SearchOnline();
             StartScan = null;
         }
     }

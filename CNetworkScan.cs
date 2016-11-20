@@ -9,7 +9,7 @@ namespace TurnOn
 {
     class CNetworkScan
     {
-        public void SearchOnline()
+        public  void SearchOnline(RichTextBox ListComp)
         {
             // Alle PCs im Netzwerk auflisten
             System.DirectoryServices.DirectoryEntry root = new System.DirectoryServices.DirectoryEntry("WinNT:");
@@ -17,10 +17,16 @@ namespace TurnOn
             {
                 foreach (System.DirectoryServices.DirectoryEntry dPC in dDom.Children)
                 {
-                    MessageBox.Show(dDom.Name + " / " + dPC.Name);
+
+                    ListComp.Text.Insert(1,dDom.Name + " / " + dPC.Name);
+
                 }
             }
+          
         }
+
+        public static void RemoveComp()
+        { }
 
     
     }
