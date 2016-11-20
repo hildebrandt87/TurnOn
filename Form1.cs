@@ -164,6 +164,7 @@ namespace TurnOn
         private void button1_Click(object sender, EventArgs e)
         {
             CNetworkScan StartScan = new CNetworkScan();
+            StartScan.SearchOnline(ListeComp);
             StartScan = null;
         }
     }
