@@ -25,8 +25,6 @@ namespace TurnOn
           
         }
 
-        public static void RemoveComp()
-        { }
 
     
     }
