@@ -18,6 +18,7 @@ namespace TurnOn
     {
         public Form MyForm;
 
+
         public Form1()
         {
 
@@ -163,8 +164,8 @@ namespace TurnOn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CNetworkScan StartScan = new CNetworkScan();
-            StartScan.SearchOnline(ListeComp);
+            CNetworkScan StartScan = new CNetworkScan("192.168.0", 195, 199);
+            StartScan.SearchNetwork(this.TxtBox_Output);
             StartScan = null;
         }
     }

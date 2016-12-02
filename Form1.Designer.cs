@@ -55,7 +55,7 @@
             this.Btn_SaveReg = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.cNetworkScanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ListeComp = new System.Windows.Forms.RichTextBox();
+            this.TxtBox_Output = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.StartTab.SuspendLayout();
             this.statusStrip2.SuspendLayout();
@@ -96,7 +96,7 @@
             // btn_shutdown
             // 
             this.btn_shutdown.Location = new System.Drawing.Point(8, 154);
-            this.btn_shutdown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_shutdown.Margin = new System.Windows.Forms.Padding(2);
             this.btn_shutdown.Name = "btn_shutdown";
             this.btn_shutdown.Size = new System.Drawing.Size(100, 23);
             this.btn_shutdown.TabIndex = 3;
@@ -110,7 +110,7 @@
             this.tabControl1.Controls.Add(this.NetzwerkScan);
             this.tabControl1.Controls.Add(this.EinstellungTab);
             this.tabControl1.Location = new System.Drawing.Point(9, 10);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(382, 261);
@@ -124,9 +124,9 @@
             this.StartTab.Controls.Add(this.btn_shutdown);
             this.StartTab.Controls.Add(this.txb_EingestelltServer);
             this.StartTab.Location = new System.Drawing.Point(4, 22);
-            this.StartTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartTab.Margin = new System.Windows.Forms.Padding(2);
             this.StartTab.Name = "StartTab";
-            this.StartTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartTab.Padding = new System.Windows.Forms.Padding(2);
             this.StartTab.Size = new System.Drawing.Size(374, 235);
             this.StartTab.TabIndex = 0;
             this.StartTab.Text = "Start";
@@ -152,10 +152,10 @@
             // 
             // NetzwerkScan
             // 
-            this.NetzwerkScan.Controls.Add(this.ListeComp);
+            this.NetzwerkScan.Controls.Add(this.TxtBox_Output);
             this.NetzwerkScan.Controls.Add(this.button1);
             this.NetzwerkScan.Location = new System.Drawing.Point(4, 22);
-            this.NetzwerkScan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NetzwerkScan.Margin = new System.Windows.Forms.Padding(2);
             this.NetzwerkScan.Name = "NetzwerkScan";
             this.NetzwerkScan.Size = new System.Drawing.Size(374, 235);
             this.NetzwerkScan.TabIndex = 2;
@@ -164,8 +164,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(2, 16);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(14, 16);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 19);
             this.button1.TabIndex = 0;
@@ -187,9 +187,9 @@
             this.EinstellungTab.Controls.Add(this.tbx_ServerName);
             this.EinstellungTab.Controls.Add(this.Btn_SaveReg);
             this.EinstellungTab.Location = new System.Drawing.Point(4, 22);
-            this.EinstellungTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EinstellungTab.Margin = new System.Windows.Forms.Padding(2);
             this.EinstellungTab.Name = "EinstellungTab";
-            this.EinstellungTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EinstellungTab.Padding = new System.Windows.Forms.Padding(2);
             this.EinstellungTab.Size = new System.Drawing.Size(374, 235);
             this.EinstellungTab.TabIndex = 1;
             this.EinstellungTab.Text = "Einstellung";
@@ -198,7 +198,7 @@
             // btn_laden
             // 
             this.btn_laden.Location = new System.Drawing.Point(100, 175);
-            this.btn_laden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_laden.Margin = new System.Windows.Forms.Padding(2);
             this.btn_laden.Name = "btn_laden";
             this.btn_laden.Size = new System.Drawing.Size(82, 23);
             this.btn_laden.TabIndex = 12;
@@ -219,7 +219,7 @@
             // tbx_Hexdata
             // 
             this.tbx_Hexdata.Location = new System.Drawing.Point(206, 32);
-            this.tbx_Hexdata.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbx_Hexdata.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_Hexdata.Name = "tbx_Hexdata";
             this.tbx_Hexdata.Size = new System.Drawing.Size(144, 20);
             this.tbx_Hexdata.TabIndex = 10;
@@ -255,7 +255,7 @@
             // tbx_ServerPW
             // 
             this.tbx_ServerPW.Location = new System.Drawing.Point(5, 136);
-            this.tbx_ServerPW.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbx_ServerPW.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_ServerPW.Name = "tbx_ServerPW";
             this.tbx_ServerPW.Size = new System.Drawing.Size(144, 20);
             this.tbx_ServerPW.TabIndex = 7;
@@ -283,7 +283,7 @@
             // tbx_UserName
             // 
             this.tbx_UserName.Location = new System.Drawing.Point(5, 83);
-            this.tbx_UserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbx_UserName.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_UserName.Name = "tbx_UserName";
             this.tbx_UserName.Size = new System.Drawing.Size(144, 20);
             this.tbx_UserName.TabIndex = 4;
@@ -291,7 +291,7 @@
             // tbx_ServerName
             // 
             this.tbx_ServerName.Location = new System.Drawing.Point(5, 32);
-            this.tbx_ServerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbx_ServerName.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_ServerName.Name = "tbx_ServerName";
             this.tbx_ServerName.Size = new System.Drawing.Size(144, 20);
             this.tbx_ServerName.TabIndex = 3;
@@ -299,7 +299,7 @@
             // Btn_SaveReg
             // 
             this.Btn_SaveReg.Location = new System.Drawing.Point(4, 175);
-            this.Btn_SaveReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_SaveReg.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_SaveReg.Name = "Btn_SaveReg";
             this.Btn_SaveReg.Size = new System.Drawing.Size(82, 23);
             this.Btn_SaveReg.TabIndex = 2;
@@ -315,13 +315,13 @@
             // 
             this.cNetworkScanBindingSource.DataSource = typeof(TurnOn.CNetworkScan);
             // 
-            // ListeComp
+            // TxtBox_Output
             // 
-            this.ListeComp.Location = new System.Drawing.Point(4, 61);
-            this.ListeComp.Name = "ListeComp";
-            this.ListeComp.Size = new System.Drawing.Size(316, 142);
-            this.ListeComp.TabIndex = 1;
-            this.ListeComp.Text = "";
+            this.TxtBox_Output.Location = new System.Drawing.Point(14, 47);
+            this.TxtBox_Output.Multiline = true;
+            this.TxtBox_Output.Name = "TxtBox_Output";
+            this.TxtBox_Output.Size = new System.Drawing.Size(342, 163);
+            this.TxtBox_Output.TabIndex = 1;
             // 
             // Form1
             // 
@@ -338,6 +338,7 @@
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
             this.NetzwerkScan.ResumeLayout(false);
+            this.NetzwerkScan.PerformLayout();
             this.EinstellungTab.ResumeLayout(false);
             this.EinstellungTab.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -374,7 +375,7 @@
         private System.Windows.Forms.TabPage NetzwerkScan;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource cNetworkScanBindingSource;
-        private System.Windows.Forms.RichTextBox ListeComp;
+        private System.Windows.Forms.TextBox TxtBox_Output;
     }
 }
 
