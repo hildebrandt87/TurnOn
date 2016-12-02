@@ -6,17 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Net.NetworkInformation;
+
 
 
 namespace TurnOn
 {
     class CNetworkScan
-    {
+    { 
         private int startIP = 0;
         private int endIP = 0;
         private string ipPrefix = "";
         private ArrayList computerList = null;
+
+        [DllImport("iphlpapi.dll", ExactSpelling = true)]
+        public static extern int SendARP(int DestIP, int SrcIP, [Out] byte[] pMacAddr, ref int PhyAddrLen);
 
         public CNetworkScan(string ipPrefix, int startIP, int endIP)
         {
@@ -28,6 +33,8 @@ namespace TurnOn
 
         public void SearchNetwork(TextBox TxtBox_Ausgabe)
         {
+            String Liste ="";
+            String MAC="";
 
             for (int i = startIP; i <= endIP; i++)
             {
@@ -45,17 +52,27 @@ namespace TurnOn
                 }
                 if (myScanHost != null)
                 {
-                    arr[0] = myScanHost.HostName;
-                    arr[1] = scanIP;
-                    computerList.Add(arr);
-                    TxtBox_Ausgabe.Text = "Hostname: " +myScanHost.HostName.ToString() + " IP: "+ scanIP.ToString();
-                    
+                    // Mac adreese ermitteln
+                    MAC = RequestMACAddress(myScanIP.ToString());
+
+                    Liste = "Hostname: " + myScanHost.HostName.ToString() + " IP: " + scanIP.ToString() +" MAC: "+ MAC+ "\r\n";
+                    TxtBox_Ausgabe.AppendText(Liste);
                 }
-  
+
+            }
+        }
+            private static string RequestMACAddress(string IP)
+        {
+            IPAddress addr = IPAddress.Parse(IP);
+            byte[] mac = new byte[6];
+            int length = mac.Length;
+            SendARP((int)addr.Address, 0, mac, ref length);
+            string macAddress = BitConverter.ToString(mac, 0, length);
+            return macAddress;
         }
 
 
     }
 
-    }
+
 }

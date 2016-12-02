@@ -164,7 +164,8 @@ namespace TurnOn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CNetworkScan StartScan = new CNetworkScan("192.168.0", 195, 199);
+            //COnstruktor überladen (Hier kann der start und endwert noch manuell eingetragen werden)
+            CNetworkScan StartScan = new CNetworkScan("192.168.0", 190, 199);
             StartScan.SearchNetwork(this.TxtBox_Output);
             StartScan = null;
         }

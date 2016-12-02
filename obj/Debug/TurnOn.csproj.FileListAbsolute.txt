@@ -63,7 +63,6 @@ C:\Users\Kai\Documents\code\TurnOn\bin\Debug\TurnOn.application
 C:\Users\Kai\Documents\code\TurnOn\bin\Debug\TurnOn.exe
 C:\Users\Kai\Documents\code\TurnOn\bin\Debug\TurnOn.pdb
 C:\Users\Kai\Documents\code\TurnOn\bin\Debug\yo\TurnOn.resources.dll
-C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.csprojResolveAssemblyReference.cache
 C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.Form1.resources
 C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.Properties.Resources.resources
 C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.Form1.yo.resources
