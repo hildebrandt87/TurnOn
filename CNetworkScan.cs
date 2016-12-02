@@ -17,12 +17,17 @@ namespace TurnOn
             {
                 foreach (System.DirectoryServices.DirectoryEntry dPC in dDom.Children)
                 {
-
-                    ListComp.Text.Insert(1,dDom.Name + " / " + dPC.Name);
+                                        ListComp.Text.Insert(1,dDom.Name + " / " + dPC.Name);
 
                 }
+
             }
-          
+                      
+        }
+
+        public bool IsOnline()
+        {
+            return true;
         }
 
 

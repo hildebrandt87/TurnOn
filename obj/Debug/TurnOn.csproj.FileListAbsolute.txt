@@ -58,3 +58,16 @@ C:\Users\Hilde\Documents\GitHub\TurnOn\TurnOn\obj\Debug\TurnOn.pdb
 C:\Users\Kai\Documents\code\TurnOn\bin\Debug\TurnOn.exe.config
 C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.exe
 C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.pdb
+C:\Users\Kai\Documents\code\TurnOn\bin\Debug\TurnOn.exe.manifest
+C:\Users\Kai\Documents\code\TurnOn\bin\Debug\TurnOn.application
+C:\Users\Kai\Documents\code\TurnOn\bin\Debug\TurnOn.exe
+C:\Users\Kai\Documents\code\TurnOn\bin\Debug\TurnOn.pdb
+C:\Users\Kai\Documents\code\TurnOn\bin\Debug\yo\TurnOn.resources.dll
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.csprojResolveAssemblyReference.cache
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.Form1.resources
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.Properties.Resources.resources
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.Form1.yo.resources
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.csproj.GenerateResource.Cache
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\yo\TurnOn.resources.dll
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.exe.manifest
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.application
