@@ -165,7 +165,10 @@ namespace TurnOn
         private void button1_Click(object sender, EventArgs e)
         {
             //COnstruktor überladen (Hier kann der start und endwert noch manuell eingetragen werden)
-            CNetworkScan StartScan = new CNetworkScan("192.168.0", 190, 199);
+            int startIP = Convert.ToInt16(start_ip_txtbox.Text);
+            int endIP = Convert.ToInt32(end_ip_txtbox.Text);
+            CNetworkScan StartScan = new CNetworkScan(txtnx_iprange.Text, startIP, endIP);
+            
             StartScan.SearchNetwork(this.TxtBox_Output);
             StartScan = null;
         }

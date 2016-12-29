@@ -70,3 +70,4 @@ C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.csproj.GenerateResource.Cach
 C:\Users\Kai\Documents\code\TurnOn\obj\Debug\yo\TurnOn.resources.dll
 C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.exe.manifest
 C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.application
+C:\Users\Kai\Documents\code\TurnOn\obj\Debug\TurnOn.csprojResolveAssemblyReference.cache
