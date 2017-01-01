@@ -162,14 +162,17 @@ namespace TurnOn
             tbx_Hexdata.Text = CReg.Get_Hex();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             //COnstruktor überladen (Hier kann der start und endwert noch manuell eingetragen werden)
-            int startIP = Convert.ToInt16(start_ip_txtbox.Text);
-            int endIP = Convert.ToInt32(end_ip_txtbox.Text);
-            CNetworkScan StartScan = new CNetworkScan(txtnx_iprange.Text, startIP, endIP);
-            
-            StartScan.SearchNetwork(this.TxtBox_Output);
+
+            CNetworkScan StartScan = new CNetworkScan();
+            StartScan.StartIP = Convert.ToInt16(start_ip_txtbox.Text);
+            StartScan.EndIP =Convert.ToInt32(end_ip_txtbox.Text);
+            StartScan.IpPrefix = txtnx_iprange.Text;
+
+            Task < bool > t1 = StartScan.SearchNetwork(this.TxtBox_Output);
+            bool check = await t1;
             StartScan = null;
         }
     }

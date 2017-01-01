@@ -14,24 +14,59 @@ using System.Net.NetworkInformation;
 namespace TurnOn
 {
     class CNetworkScan
-    { 
+    {
         private int startIP = 0;
         private int endIP = 0;
         private string ipPrefix = "";
-        private ArrayList computerList = null;
+        public ArrayList computerList = null;
+
+        //Getter / Setter
+        public int StartIP
+        {
+            get
+            {
+                return startIP;
+            }
+
+            set
+            {
+                startIP = value;
+            }
+        }
+        public int EndIP
+        {
+            get
+            {
+                return endIP;
+            }
+
+            set
+            {
+                endIP = value;
+            }
+        }
+        public string IpPrefix
+        {
+            get
+            {
+                return ipPrefix;
+            }
+
+            set
+            {
+                ipPrefix = value;
+            }
+        }
 
         [DllImport("iphlpapi.dll", ExactSpelling = true)]
         public static extern int SendARP(int DestIP, int SrcIP, [Out] byte[] pMacAddr, ref int PhyAddrLen);
 
-        public CNetworkScan(string ipPrefix, int startIP, int endIP)
+        public CNetworkScan()
         {
-            this.startIP = startIP;
-            this.endIP = endIP;
-            this.ipPrefix = ipPrefix;
-            computerList = new ArrayList();
+
         }
 
-        public void SearchNetwork(TextBox TxtBox_Ausgabe)
+        public async Task <bool> SearchNetwork(TextBox TxtBox_Ausgabe)
         {
             String Liste ="";
             String MAC="";
@@ -44,7 +79,8 @@ namespace TurnOn
                 string[] arr = new string[2];
                 try
                 {
-                    myScanHost = Dns.GetHostByAddress(myScanIP);
+                    //myScanHost = Dns.GetHostByAddress(myScanIP);
+                    myScanHost = await Dns.GetHostEntryAsync(myScanIP);
                 }
                 catch
                 {
@@ -53,15 +89,16 @@ namespace TurnOn
                 if (myScanHost != null)
                 {
                     // Mac adreese ermitteln
-                    MAC = RequestMACAddress(myScanIP.ToString());
+                    MAC =  await RequestMACAddress(myScanIP.ToString());
 
                     Liste = "Hostname: " + myScanHost.HostName.ToString() + " IP: " + scanIP.ToString() +" MAC: "+ MAC+ "\r\n";
                     TxtBox_Ausgabe.AppendText(Liste);
                 }
 
             }
+            return true;
         }
-            private static string RequestMACAddress(string IP)
+        private static async Task <string> RequestMACAddress(string IP)
         {
             IPAddress addr = IPAddress.Parse(IP);
             byte[] mac = new byte[6];
