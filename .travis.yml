@@ -4,4 +4,4 @@ sudo: required
 solution: TurnOn.sln
 mono: latest
 script:
-  - ./build.sh 
+  - xbuild /p:Configuration=Release TurnOn.sln
