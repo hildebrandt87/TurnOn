@@ -2,7 +2,6 @@ language: csharp
 dist: trusty
 sudo: required
 solution: TurnOn.sln
-mono: none
-dotnet: 3.10.0
+mono: latest
 script:
   - ./build.sh --quiet verify
