@@ -38,17 +38,21 @@
             this.StartTab = new System.Windows.Forms.TabPage();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.Status_front = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.NetzwerkScan = new System.Windows.Forms.TabPage();
+            this.progressBarNetScan = new System.Windows.Forms.ProgressBar();
+            this.end_ip_txtbox = new System.Windows.Forms.TextBox();
+            this.start_ip_txtbox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.Netzwerk = new System.Windows.Forms.Label();
             this.txtnx_iprange = new System.Windows.Forms.TextBox();
             this.TxtBox_Output = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_StartScan = new System.Windows.Forms.Button();
             this.EinstellungTab = new System.Windows.Forms.TabPage();
             this.btn_laden = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tbx_Hexdata = new System.Windows.Forms.TextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.tbx_ServerPW = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,17 +61,16 @@
             this.tbx_ServerName = new System.Windows.Forms.TextBox();
             this.Btn_SaveReg = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.timerNetScan = new System.Windows.Forms.Timer(this.components);
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Setting_Status = new System.Windows.Forms.StatusStrip();
             this.cNetworkScanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.start_ip_txtbox = new System.Windows.Forms.TextBox();
-            this.end_ip_txtbox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.StartTab.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.NetzwerkScan.SuspendLayout();
             this.EinstellungTab.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.Setting_Status.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cNetworkScanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,7 +145,8 @@
             // 
             this.statusStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Status_front});
+            this.Status_front,
+            this.toolStripProgressBar1});
             this.statusStrip2.Location = new System.Drawing.Point(2, 211);
             this.statusStrip2.Name = "statusStrip2";
             this.statusStrip2.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
@@ -153,11 +157,17 @@
             // Status_front
             // 
             this.Status_front.Name = "Status_front";
-            this.Status_front.Size = new System.Drawing.Size(359, 17);
+            this.Status_front.Size = new System.Drawing.Size(257, 17);
             this.Status_front.Spring = true;
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
             // NetzwerkScan
             // 
+            this.NetzwerkScan.Controls.Add(this.progressBarNetScan);
             this.NetzwerkScan.Controls.Add(this.end_ip_txtbox);
             this.NetzwerkScan.Controls.Add(this.start_ip_txtbox);
             this.NetzwerkScan.Controls.Add(this.label7);
@@ -165,7 +175,7 @@
             this.NetzwerkScan.Controls.Add(this.Netzwerk);
             this.NetzwerkScan.Controls.Add(this.txtnx_iprange);
             this.NetzwerkScan.Controls.Add(this.TxtBox_Output);
-            this.NetzwerkScan.Controls.Add(this.button1);
+            this.NetzwerkScan.Controls.Add(this.Btn_StartScan);
             this.NetzwerkScan.Location = new System.Drawing.Point(4, 22);
             this.NetzwerkScan.Margin = new System.Windows.Forms.Padding(2);
             this.NetzwerkScan.Name = "NetzwerkScan";
@@ -173,6 +183,47 @@
             this.NetzwerkScan.TabIndex = 2;
             this.NetzwerkScan.Text = "Netzwerk Scan";
             this.NetzwerkScan.UseVisualStyleBackColor = true;
+            // 
+            // progressBarNetScan
+            // 
+            this.progressBarNetScan.Location = new System.Drawing.Point(14, 209);
+            this.progressBarNetScan.Name = "progressBarNetScan";
+            this.progressBarNetScan.Size = new System.Drawing.Size(342, 23);
+            this.progressBarNetScan.TabIndex = 8;
+            // 
+            // end_ip_txtbox
+            // 
+            this.end_ip_txtbox.Location = new System.Drawing.Point(178, 71);
+            this.end_ip_txtbox.Name = "end_ip_txtbox";
+            this.end_ip_txtbox.Size = new System.Drawing.Size(48, 20);
+            this.end_ip_txtbox.TabIndex = 7;
+            this.end_ip_txtbox.Text = "199";
+            // 
+            // start_ip_txtbox
+            // 
+            this.start_ip_txtbox.Location = new System.Drawing.Point(178, 45);
+            this.start_ip_txtbox.Name = "start_ip_txtbox";
+            this.start_ip_txtbox.Size = new System.Drawing.Size(48, 20);
+            this.start_ip_txtbox.TabIndex = 6;
+            this.start_ip_txtbox.Text = "190";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(121, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "End IP";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(121, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Start IP";
             // 
             // Netzwerk
             // 
@@ -199,23 +250,23 @@
             this.TxtBox_Output.Size = new System.Drawing.Size(342, 113);
             this.TxtBox_Output.TabIndex = 1;
             // 
-            // button1
+            // Btn_StartScan
             // 
-            this.button1.Location = new System.Drawing.Point(14, 16);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 19);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start Scan";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_StartScan.Location = new System.Drawing.Point(14, 16);
+            this.Btn_StartScan.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_StartScan.Name = "Btn_StartScan";
+            this.Btn_StartScan.Size = new System.Drawing.Size(76, 19);
+            this.Btn_StartScan.TabIndex = 0;
+            this.Btn_StartScan.Text = "Start Scan";
+            this.Btn_StartScan.UseVisualStyleBackColor = true;
+            this.Btn_StartScan.Click += new System.EventHandler(this.button1_Click);
             // 
             // EinstellungTab
             // 
             this.EinstellungTab.Controls.Add(this.btn_laden);
             this.EinstellungTab.Controls.Add(this.label5);
             this.EinstellungTab.Controls.Add(this.tbx_Hexdata);
-            this.EinstellungTab.Controls.Add(this.statusStrip1);
+            this.EinstellungTab.Controls.Add(this.Setting_Status);
             this.EinstellungTab.Controls.Add(this.label4);
             this.EinstellungTab.Controls.Add(this.tbx_ServerPW);
             this.EinstellungTab.Controls.Add(this.label3);
@@ -260,24 +311,6 @@
             this.tbx_Hexdata.Name = "tbx_Hexdata";
             this.tbx_Hexdata.Size = new System.Drawing.Size(144, 20);
             this.tbx_Hexdata.TabIndex = 10;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(2, 211);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(370, 22);
-            this.statusStrip1.TabIndex = 9;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(359, 17);
-            this.toolStripStatusLabel1.Spring = true;
-            this.toolStripStatusLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             // 
             // label4
             // 
@@ -348,43 +381,31 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
+            // timerNetScan
+            // 
+            this.timerNetScan.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(328, 17);
+            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
+            // Setting_Status
+            // 
+            this.Setting_Status.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.Setting_Status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.Setting_Status.Location = new System.Drawing.Point(2, 211);
+            this.Setting_Status.Name = "Setting_Status";
+            this.Setting_Status.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.Setting_Status.Size = new System.Drawing.Size(370, 22);
+            this.Setting_Status.TabIndex = 9;
+            // 
             // cNetworkScanBindingSource
             // 
             this.cNetworkScanBindingSource.DataSource = typeof(TurnOn.CNetworkScan);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(121, 49);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Start IP";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(121, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 13);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "End IP";
-            // 
-            // start_ip_txtbox
-            // 
-            this.start_ip_txtbox.Location = new System.Drawing.Point(178, 45);
-            this.start_ip_txtbox.Name = "start_ip_txtbox";
-            this.start_ip_txtbox.Size = new System.Drawing.Size(48, 20);
-            this.start_ip_txtbox.TabIndex = 6;
-            this.start_ip_txtbox.Text = "190";
-            // 
-            // end_ip_txtbox
-            // 
-            this.end_ip_txtbox.Location = new System.Drawing.Point(178, 71);
-            this.end_ip_txtbox.Name = "end_ip_txtbox";
-            this.end_ip_txtbox.Size = new System.Drawing.Size(48, 20);
-            this.end_ip_txtbox.TabIndex = 7;
-            this.end_ip_txtbox.Text = "199";
             // 
             // Form1
             // 
@@ -404,8 +425,8 @@
             this.NetzwerkScan.PerformLayout();
             this.EinstellungTab.ResumeLayout(false);
             this.EinstellungTab.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.Setting_Status.ResumeLayout(false);
+            this.Setting_Status.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cNetworkScanBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -427,16 +448,12 @@
         private System.Windows.Forms.TextBox tbx_UserName;
         private System.Windows.Forms.TextBox tbx_ServerName;
         private System.Windows.Forms.Button Btn_SaveReg;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbx_Hexdata;
-        private System.Windows.Forms.StatusStrip statusStrip2;
-        private System.Windows.Forms.ToolStripStatusLabel Status_front;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btn_laden;
         private System.Windows.Forms.TabPage NetzwerkScan;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_StartScan;
         private System.Windows.Forms.BindingSource cNetworkScanBindingSource;
         private System.Windows.Forms.TextBox TxtBox_Output;
         private System.Windows.Forms.Label Netzwerk;
@@ -445,6 +462,13 @@
         private System.Windows.Forms.TextBox start_ip_txtbox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.StatusStrip statusStrip2;
+        private System.Windows.Forms.ToolStripStatusLabel Status_front;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ProgressBar progressBarNetScan;
+        private System.Windows.Forms.Timer timerNetScan;
+        private System.Windows.Forms.StatusStrip Setting_Status;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

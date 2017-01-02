@@ -63,11 +63,11 @@ namespace TurnOn
 
         public CNetworkScan()
         {
-
         }
 
-        public async Task <bool> SearchNetwork(TextBox TxtBox_Ausgabe)
+        public async Task <bool> SearchNetwork(TextBox TxtBox_Ausgabe, ProgressBar progressNetScan)
         {
+            TxtBox_Ausgabe.Clear();
             String Liste ="";
             String MAC="";
 
@@ -79,7 +79,6 @@ namespace TurnOn
                 string[] arr = new string[2];
                 try
                 {
-                    //myScanHost = Dns.GetHostByAddress(myScanIP);
                     myScanHost = await Dns.GetHostEntryAsync(myScanIP);
                 }
                 catch
@@ -94,7 +93,7 @@ namespace TurnOn
                     Liste = "Hostname: " + myScanHost.HostName.ToString() + " IP: " + scanIP.ToString() +" MAC: "+ MAC+ "\r\n";
                     TxtBox_Ausgabe.AppendText(Liste);
                 }
-
+                
             }
             return true;
         }

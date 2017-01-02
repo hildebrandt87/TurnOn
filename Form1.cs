@@ -16,35 +16,24 @@ namespace TurnOn
 {
     public partial class Form1 : Form
     {
-        public Form MyForm;
-
-
         public Form1()
         {
 
-            MyForm = Form1.ActiveForm;
             InitializeComponent();
-
             //////////////////////////////////////////////////
             ////////////////TIMER////////////////////////////
 
             System.Timers.Timer aTimer = new System.Timers.Timer(1000);
             aTimer.Elapsed += aTimer_Elapsed;
             aTimer.Enabled = true;
-
-
         }
-
-
 
         async void aTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-          
+        
             try
-            {
-                
+            {              
                 IPHostEntry hostName = Dns.GetHostByName(CReg.Get_Servername());
-
                 //InvokeRequired dient nur als Abfrage damit der Thread Save ausgeführt werden kann !
                 //Sehr wichtig da eigentlich kein fremder thread auf den thread zugreifen kann welcher die steurelemente erstellt hat
                 if (InvokeRequired)
@@ -60,9 +49,6 @@ namespace TurnOn
                     Invoke((Func<bool>)WriteStatusOffline);
                 }
             }
-
-
-
         }
 
         //Methoden müssen auserhalb deklariert werden da sonst kein thread save aufruf nicht klappt
@@ -87,17 +73,10 @@ namespace TurnOn
             //Wenn alles ok ist bitte wieder löschen
             //macStr = "9C-B6-54-A9-DE-FA";
 
-
-            //Klasseninstanz eröffnen
             CWol Up = new CWol();
-
             //Hex String umwandeln
             macByte = Up.GetMacArray(CReg.Get_Hex());
-
-            //Übergabe 
             Up.WakeOnLan(macByte);
-
-            //Klasse beenden
             Up = null;
 
         }
@@ -105,17 +84,16 @@ namespace TurnOn
 
         private void btn_shutdown_Click(object sender, EventArgs e)
         {
-            CShutDown End = new CShutDown();
+            CShutDown ShutDown = new CShutDown();
             try
             {
-                End.ShutDown(CReg.Get_Servername(), CReg.Get_Username(), CReg.Get_Password());
+                ShutDown.ShutDown(CReg.Get_Servername(), CReg.Get_Username(), CReg.Get_Password());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Fehler bei Methode: shutdown." + ex.ToString());
             }
-
-            End = null;
+            ShutDown = null;
         }
 
         private void Btn_SaveReg_Click(object sender, EventArgs e)
@@ -126,15 +104,14 @@ namespace TurnOn
             string local_username = tbx_UserName.Text.ToString();
             string local_password = tbx_ServerPW.Text.ToString();
             string local_hex = tbx_Hexdata.Text.ToString();
-
-            
+ 
             CReg SaveSettings = new CReg();
 
             //Prüfen ob Speichern erfolgreich ist
             if (SaveSettings.Set_Registry(local_servername, local_username, local_password, local_hex) == true)
-                toolStripStatusLabel1.Text = "Speichern erfolgreich";
+                Setting_Status.Text = "Speichern erfolgreich";
             else
-                toolStripStatusLabel1.Text = "Beim Speichern ist ein Fehler aufgetreten";
+                Setting_Status.Text = "Beim Speichern ist ein Fehler aufgetreten";
 
             SaveSettings = null;
         }
@@ -164,16 +141,24 @@ namespace TurnOn
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            //COnstruktor überladen (Hier kann der start und endwert noch manuell eingetragen werden)
+            progressBarNetScan.Value = 0;
+            timerNetScan.Start();
 
             CNetworkScan StartScan = new CNetworkScan();
             StartScan.StartIP = Convert.ToInt16(start_ip_txtbox.Text);
             StartScan.EndIP =Convert.ToInt32(end_ip_txtbox.Text);
             StartScan.IpPrefix = txtnx_iprange.Text;
 
-            Task < bool > t1 = StartScan.SearchNetwork(this.TxtBox_Output);
+            Task < bool > t1 = StartScan.SearchNetwork(this.TxtBox_Output,progressBarNetScan);
             bool check = await t1;
             StartScan = null;
+            timerNetScan.Stop();
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.progressBarNetScan.Increment(1);
         }
     }
 }
