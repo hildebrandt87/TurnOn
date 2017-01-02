@@ -1,0 +1,6 @@
+language: csharp
+solution: TurnOn.sln
+mono: none
+dotnet: 3.10.0
+script:
+  - ./build.sh --quiet verify
