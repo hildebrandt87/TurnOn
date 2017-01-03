@@ -1,3 +1,9 @@
 # TurnOn
 [![Build Status](https://travis-ci.org/hildebrandt87/TurnOn.svg?branch=master)](https://travis-ci.org/hildebrandt87/TurnOn)
-TurnOn ist ein kleines Tool um Rechner welche sich im LAN befinden zu starten oder zu Beenden
+
+#About the project:
+TurnOn is a small WinForm tool that makes it possible to start or stop a computer remotely. Written in C#
+
+#features
+-Start / Stop remote Windows operating computer 
+-Search for activ remote computer in your local area network
