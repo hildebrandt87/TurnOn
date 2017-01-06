@@ -87,7 +87,7 @@ namespace TurnOn
             CShutDown ShutDown = new CShutDown();
             try
             {
-                ShutDown.EndWin(CReg.Get_Servername(), CReg.Get_Username(), CReg.Get_Password());
+                ShutDown.EndWindows(CReg.Get_Servername(), CReg.Get_Username(), CReg.Get_Password());
             }
             catch (Exception ex)
             {
