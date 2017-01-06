@@ -14,7 +14,6 @@ namespace TurnOn
         {
             
             //Milestone: Aktuell lässt sich mit dieser Funktion lediglich WIndows Rechner herunterfahren.
-            //Ausbau ebenfalls für Unix/Linux 
             ManagementScope Scope = null;
             ConnectionOptions ConnOptions = null;
             ObjectQuery ObjQuery = null;
