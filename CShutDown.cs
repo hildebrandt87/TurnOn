@@ -10,7 +10,7 @@ namespace TurnOn
 {
     class CShutDown
     {
-        public void  ShutDown(string Servername,string Username,string Password)
+        public void  EndWin(string Servername,string Username,string Password)
         {
             
             //Milestone: Aktuell lässt sich mit dieser Funktion lediglich WIndows Rechner herunterfahren.

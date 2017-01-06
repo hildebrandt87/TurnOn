@@ -53,6 +53,8 @@
             this.btn_laden = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tbx_Hexdata = new System.Windows.Forms.TextBox();
+            this.Setting_Status = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.tbx_ServerPW = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,8 +64,6 @@
             this.Btn_SaveReg = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.timerNetScan = new System.Windows.Forms.Timer(this.components);
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Setting_Status = new System.Windows.Forms.StatusStrip();
             this.cNetworkScanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.StartTab.SuspendLayout();
@@ -312,6 +312,24 @@
             this.tbx_Hexdata.Size = new System.Drawing.Size(144, 20);
             this.tbx_Hexdata.TabIndex = 10;
             // 
+            // Setting_Status
+            // 
+            this.Setting_Status.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.Setting_Status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.Setting_Status.Location = new System.Drawing.Point(2, 211);
+            this.Setting_Status.Name = "Setting_Status";
+            this.Setting_Status.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.Setting_Status.Size = new System.Drawing.Size(370, 22);
+            this.Setting_Status.TabIndex = 9;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(359, 17);
+            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -384,24 +402,6 @@
             // timerNetScan
             // 
             this.timerNetScan.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(328, 17);
-            this.toolStripStatusLabel1.Spring = true;
-            this.toolStripStatusLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            // 
-            // Setting_Status
-            // 
-            this.Setting_Status.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.Setting_Status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.Setting_Status.Location = new System.Drawing.Point(2, 211);
-            this.Setting_Status.Name = "Setting_Status";
-            this.Setting_Status.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.Setting_Status.Size = new System.Drawing.Size(370, 22);
-            this.Setting_Status.TabIndex = 9;
             // 
             // cNetworkScanBindingSource
             // 
