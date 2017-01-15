@@ -18,11 +18,9 @@ namespace TurnOn
     {
         public Form1()
         {
-
             InitializeComponent();
             //////////////////////////////////////////////////
             ////////////////TIMER////////////////////////////
-
             System.Timers.Timer aTimer = new System.Timers.Timer(1000);
             aTimer.Elapsed += aTimer_Elapsed;
             aTimer.Enabled = true;
@@ -78,7 +76,6 @@ namespace TurnOn
             macByte = Up.GetMacArray(CReg.Get_Hex());
             Up.WakeOnLan(macByte);
             Up = null;
-
         }
 
 
@@ -112,15 +109,9 @@ namespace TurnOn
                 Setting_Status.Text = "Speichern erfolgreich";
             else
                 Setting_Status.Text = "Beim Speichern ist ein Fehler aufgetreten";
-
             SaveSettings = null;
         }
 
-        //wird nicht gestartet daher kann diese methode vernachlässigt werden
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-        }
 
         private void btn_laden_Click(object sender, EventArgs e)
         {

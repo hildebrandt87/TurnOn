@@ -62,7 +62,6 @@
             this.tbx_UserName = new System.Windows.Forms.TextBox();
             this.tbx_ServerName = new System.Windows.Forms.TextBox();
             this.Btn_SaveReg = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.timerNetScan = new System.Windows.Forms.Timer(this.components);
             this.cNetworkScanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
@@ -395,10 +394,6 @@
             this.Btn_SaveReg.UseVisualStyleBackColor = true;
             this.Btn_SaveReg.Click += new System.EventHandler(this.Btn_SaveReg_Click);
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
             // timerNetScan
             // 
             this.timerNetScan.Tick += new System.EventHandler(this.timer1_Tick);
@@ -450,7 +445,6 @@
         private System.Windows.Forms.Button Btn_SaveReg;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbx_Hexdata;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btn_laden;
         private System.Windows.Forms.TabPage NetzwerkScan;
         private System.Windows.Forms.Button Btn_StartScan;
