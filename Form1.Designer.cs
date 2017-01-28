@@ -248,6 +248,7 @@
             this.TxtBox_Output.Name = "TxtBox_Output";
             this.TxtBox_Output.Size = new System.Drawing.Size(342, 113);
             this.TxtBox_Output.TabIndex = 1;
+            this.TxtBox_Output.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TxtBox_Output_MouseDown);
             // 
             // Btn_StartScan
             // 

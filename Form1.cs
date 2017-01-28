@@ -151,5 +151,12 @@ namespace TurnOn
         {
             this.progressBarNetScan.Increment(1);
         }
+
+        private void TxtBox_Output_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Auswahl der einträge treffen
+            string SelectedTxt="";
+            TxtBox_Output.SelectAll();
+        }
     }
 }
