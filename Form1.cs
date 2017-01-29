@@ -155,8 +155,7 @@ namespace TurnOn
         private void TxtBox_Output_MouseDown(object sender, MouseEventArgs e)
         {
             //Auswahl der einträge treffen
-            string SelectedTxt="";
-            TxtBox_Output.SelectAll();
+            //Entfernt da nur text seleciert wird
         }
     }
 }
