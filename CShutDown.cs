@@ -56,5 +56,13 @@ namespace TurnOn
 
         }
 
+        public void Shutdown_LinuxOS()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = "/usr/bin/sudo";
+            process.StartInfo.Arguments = "/sbin/shutdown -h now";
+            process.Start();
+        }
+
     }
 }
