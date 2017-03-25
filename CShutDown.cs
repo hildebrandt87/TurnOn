@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Management;
 using System.Windows.Forms;
+using Renci.SshNet;
 
 namespace TurnOn
 {
@@ -56,12 +57,22 @@ namespace TurnOn
 
         }
 
-        public void Shutdown_LinuxOS()
+        public void Shutdown_LinuxOS(string Servername, string Username, string Password)
         {
+            /*
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             process.StartInfo.FileName = "/usr/bin/sudo";
             process.StartInfo.Arguments = "/sbin/shutdown -h now";
             process.Start();
+            */
+
+
+            using (var client = new SshClient(Servername, Username, Password))
+            { 
+                client.Connect();
+                client.RunCommand("/sbin/shutdown -h now");
+                client.Disconnect();
+            }
         }
 
     }

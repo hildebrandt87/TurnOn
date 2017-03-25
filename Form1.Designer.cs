@@ -64,6 +64,7 @@
             this.Btn_SaveReg = new System.Windows.Forms.Button();
             this.timerNetScan = new System.Windows.Forms.Timer(this.components);
             this.cNetworkScanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Shutdown_omv = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.StartTab.SuspendLayout();
             this.statusStrip2.SuspendLayout();
@@ -126,6 +127,7 @@
             // 
             // StartTab
             // 
+            this.StartTab.Controls.Add(this.Shutdown_omv);
             this.StartTab.Controls.Add(this.statusStrip2);
             this.StartTab.Controls.Add(this.Btn_Starten);
             this.StartTab.Controls.Add(this.label1);
@@ -403,6 +405,16 @@
             // 
             this.cNetworkScanBindingSource.DataSource = typeof(TurnOn.CNetworkScan);
             // 
+            // Shutdown_omv
+            // 
+            this.Shutdown_omv.Location = new System.Drawing.Point(118, 154);
+            this.Shutdown_omv.Name = "Shutdown_omv";
+            this.Shutdown_omv.Size = new System.Drawing.Size(123, 22);
+            this.Shutdown_omv.TabIndex = 5;
+            this.Shutdown_omv.Text = "OMV Herunterfahren";
+            this.Shutdown_omv.UseVisualStyleBackColor = true;
+            this.Shutdown_omv.Click += new System.EventHandler(this.btnShutOmv_click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,6 +476,7 @@
         private System.Windows.Forms.Timer timerNetScan;
         private System.Windows.Forms.StatusStrip Setting_Status;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button Shutdown_omv;
     }
 }
 

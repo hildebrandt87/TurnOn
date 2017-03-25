@@ -157,5 +157,12 @@ namespace TurnOn
             //Auswahl der einträge treffen
             //Entfernt da nur text seleciert wird
         }
+
+        private void btnShutOmv_click(object sender, EventArgs e)
+        {
+            CShutDown shutOmvdown = new CShutDown();
+            shutOmvdown.Shutdown_LinuxOS(CReg.Get_Servername(), CReg.Get_Username(), CReg.Get_Password());
+            shutOmvdown = null;
+        }
     }
 }
