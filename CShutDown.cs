@@ -59,13 +59,10 @@ namespace TurnOn
 
         public void Shutdown_LinuxOS(string Servername, string Username, string Password)
         {
-            /*
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            process.StartInfo.FileName = "/usr/bin/sudo";
-            process.StartInfo.Arguments = "/sbin/shutdown -h now";
-            process.Start();
-            */
-
+       
+            //Achtung: auf omv muss ssh aktiv sein 
+            //Benutzername zum Herunterfahren mittels SSH muss root sein !
+            //Hier sollte über die GUI nochmals ein neues Feld hinzugefügt werden (Only OMV/Linux)
 
             using (var client = new SshClient(Servername, Username, Password))
             { 
