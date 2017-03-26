@@ -57,10 +57,9 @@ namespace TurnOn
 
         }
 
-        public void Shutdown_LinuxOS(string Servername, string Username, string Password)
+        public void EndLinux(string Servername, string Username, string Password)
         {
-       
-            //Achtung: auf omv muss ssh aktiv sein 
+            //Achtung: auf omv oder Linux system muss ssh aktiv sein 
             //Benutzername zum Herunterfahren mittels SSH muss root sein !
             //Hier sollte über die GUI nochmals ein neues Feld hinzugefügt werden (Only OMV/Linux)
 

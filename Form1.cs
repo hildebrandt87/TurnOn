@@ -160,9 +160,10 @@ namespace TurnOn
 
         private void btnShutOmv_click(object sender, EventArgs e)
         {
-            CShutDown shutOmvdown = new CShutDown();
-            shutOmvdown.Shutdown_LinuxOS(CReg.Get_Servername(), CReg.Get_Username(), CReg.Get_Password());
-            shutOmvdown = null;
+            // OS Linux herunterfahren
+            CShutDown shutLinuxvdown = new CShutDown();
+            shutLinuxvdown.EndLinux(CReg.Get_Servername(), CReg.Get_Username(), CReg.Get_Password());
+            shutLinuxvdown = null;
         }
     }
 }
