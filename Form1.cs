@@ -165,5 +165,7 @@ namespace TurnOn
             shutLinuxvdown.EndLinux(CReg.Get_Servername(), CReg.Get_Username(), CReg.Get_Password());
             shutLinuxvdown = null;
         }
+
+      
     }
 }

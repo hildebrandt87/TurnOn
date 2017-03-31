@@ -36,6 +36,7 @@
             this.btn_shutdown = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.StartTab = new System.Windows.Forms.TabPage();
+            this.Shutdown_omv = new System.Windows.Forms.Button();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.Status_front = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
@@ -50,6 +51,7 @@
             this.TxtBox_Output = new System.Windows.Forms.TextBox();
             this.Btn_StartScan = new System.Windows.Forms.Button();
             this.EinstellungTab = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
             this.btn_laden = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tbx_Hexdata = new System.Windows.Forms.TextBox();
@@ -64,7 +66,9 @@
             this.Btn_SaveReg = new System.Windows.Forms.Button();
             this.timerNetScan = new System.Windows.Forms.Timer(this.components);
             this.cNetworkScanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Shutdown_omv = new System.Windows.Forms.Button();
+            this.tbx_UserNameLinux = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbx_ServerPWLinux = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.StartTab.SuspendLayout();
             this.statusStrip2.SuspendLayout();
@@ -141,6 +145,16 @@
             this.StartTab.TabIndex = 0;
             this.StartTab.Text = "Start";
             this.StartTab.UseVisualStyleBackColor = true;
+            // 
+            // Shutdown_omv
+            // 
+            this.Shutdown_omv.Location = new System.Drawing.Point(118, 154);
+            this.Shutdown_omv.Name = "Shutdown_omv";
+            this.Shutdown_omv.Size = new System.Drawing.Size(123, 22);
+            this.Shutdown_omv.TabIndex = 5;
+            this.Shutdown_omv.Text = "OMV Herunterfahren";
+            this.Shutdown_omv.UseVisualStyleBackColor = true;
+            this.Shutdown_omv.Click += new System.EventHandler(this.btnShutOmv_click);
             // 
             // statusStrip2
             // 
@@ -265,6 +279,10 @@
             // 
             // EinstellungTab
             // 
+            this.EinstellungTab.Controls.Add(this.tbx_ServerPWLinux);
+            this.EinstellungTab.Controls.Add(this.label9);
+            this.EinstellungTab.Controls.Add(this.tbx_UserNameLinux);
+            this.EinstellungTab.Controls.Add(this.label8);
             this.EinstellungTab.Controls.Add(this.btn_laden);
             this.EinstellungTab.Controls.Add(this.label5);
             this.EinstellungTab.Controls.Add(this.tbx_Hexdata);
@@ -284,6 +302,16 @@
             this.EinstellungTab.TabIndex = 1;
             this.EinstellungTab.Text = "Einstellung";
             this.EinstellungTab.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(203, 64);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Benutzername Linux";
             // 
             // btn_laden
             // 
@@ -405,15 +433,29 @@
             // 
             this.cNetworkScanBindingSource.DataSource = typeof(TurnOn.CNetworkScan);
             // 
-            // Shutdown_omv
+            // tbx_UserNameLinux
             // 
-            this.Shutdown_omv.Location = new System.Drawing.Point(118, 154);
-            this.Shutdown_omv.Name = "Shutdown_omv";
-            this.Shutdown_omv.Size = new System.Drawing.Size(123, 22);
-            this.Shutdown_omv.TabIndex = 5;
-            this.Shutdown_omv.Text = "OMV Herunterfahren";
-            this.Shutdown_omv.UseVisualStyleBackColor = true;
-            this.Shutdown_omv.Click += new System.EventHandler(this.btnShutOmv_click);
+            this.tbx_UserNameLinux.Location = new System.Drawing.Point(206, 82);
+            this.tbx_UserNameLinux.Name = "tbx_UserNameLinux";
+            this.tbx_UserNameLinux.Size = new System.Drawing.Size(144, 20);
+            this.tbx_UserNameLinux.TabIndex = 14;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(203, 117);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(115, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Server Password Linux";
+            // 
+            // tbx_ServerPWLinux
+            // 
+            this.tbx_ServerPWLinux.Location = new System.Drawing.Point(206, 135);
+            this.tbx_ServerPWLinux.Name = "tbx_ServerPWLinux";
+            this.tbx_ServerPWLinux.Size = new System.Drawing.Size(144, 20);
+            this.tbx_ServerPWLinux.TabIndex = 16;
             // 
             // Form1
             // 
@@ -477,6 +519,10 @@
         private System.Windows.Forms.StatusStrip Setting_Status;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button Shutdown_omv;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbx_ServerPWLinux;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tbx_UserNameLinux;
     }
 }
 
