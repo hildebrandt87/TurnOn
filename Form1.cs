@@ -101,11 +101,13 @@ namespace TurnOn
             string local_username = tbx_UserName.Text.ToString();
             string local_password = tbx_ServerPW.Text.ToString();
             string local_hex = tbx_Hexdata.Text.ToString();
- 
+            string local_UserNameLinux = tbx_UserNameLinux.Text.ToString();
+            string local_ServerPWLinux = tbx_ServerPWLinux.Text.ToString();
+
             CReg SaveSettings = new CReg();
 
             //Prüfen ob Speichern erfolgreich ist
-            if (SaveSettings.Set_Registry(local_servername, local_username, local_password, local_hex) == true)
+            if (SaveSettings.Set_Registry(local_servername, local_username, local_password, local_hex, local_UserNameLinux, local_ServerPWLinux) == true)
                 Setting_Status.Text = "Speichern erfolgreich";
             else
                 Setting_Status.Text = "Beim Speichern ist ein Fehler aufgetreten";
@@ -128,6 +130,13 @@ namespace TurnOn
 
             //Hex einlesen
             tbx_Hexdata.Text = CReg.Get_Hex();
+
+            //Linux Username einlesen
+            tbx_UserNameLinux.Text = CReg.Get_LinuxUsername();
+
+            //Linx Server PW einlesen
+            tbx_ServerPWLinux.Text = CReg.Get_LinuxServerPW();
+
         }
 
         private async void button1_Click(object sender, EventArgs e)

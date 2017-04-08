@@ -12,7 +12,7 @@ namespace TurnOn
         RegistryKey Key;
 
         //Daten in Registry Speichern
-        public bool Set_Registry(string Servername, string Username, string Password,string hex)
+        public bool Set_Registry(string Servername, string Username, string Password,string hex,string UserNameLinux,string ServerPWLinux)
         {
             try
             {
@@ -23,6 +23,10 @@ namespace TurnOn
                 Key.SetValue("Username", Username);
                 Key.SetValue("Password", Password);
                 Key.SetValue("Hex", hex);
+
+                //set Linux Value
+                Key.SetValue("UsernameLinux", UserNameLinux);
+                Key.SetValue("ServerPWLinux", ServerPWLinux);
 
             }
             catch (Exception)
@@ -40,7 +44,7 @@ namespace TurnOn
         //DIese Methode kann eigentlich gelöscht werden
         public static string[] GetAll_RegistryKeys()
         {
-            string[] Daten = new string[3];
+            string[] Daten = new string[5];
 
             try
             {
@@ -51,6 +55,8 @@ namespace TurnOn
                 Daten[0] = Key.GetValue("Servername").ToString();
                 Daten[1] = Key.GetValue("Username").ToString();
                 Daten[2] = Key.GetValue("Password").ToString();
+                Daten[3] = Key.GetValue("UsernameLinux").ToString();
+                Daten[4] = Key.GetValue("ServerPWLinux").ToString();
 
             }
             catch (Exception)
@@ -131,6 +137,48 @@ namespace TurnOn
 
                 //Werte holen
                 name = Key.GetValue("Hex").ToString();
+
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+            }
+            return name;
+        }
+
+        //Linux Username
+        public static string Get_LinuxUsername()
+        {
+            string name = null;
+
+            try
+            {
+                RegistryKey BaseKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Default);
+                RegistryKey Key = BaseKey.OpenSubKey("TurnOnSettings");
+
+                //Werte holen
+                name = Key.GetValue("UsernameLinux").ToString();
+
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+            }
+            return name;
+        }
+
+        //Linux Server Passwort
+        public static string Get_LinuxServerPW()
+        {
+            string name = null;
+
+            try
+            {
+                RegistryKey BaseKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Default);
+                RegistryKey Key = BaseKey.OpenSubKey("TurnOnSettings");
+
+                //Werte holen
+                name = Key.GetValue("ServerPWLinux").ToString();
 
             }
             catch (Exception ex)

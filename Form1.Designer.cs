@@ -51,6 +51,9 @@
             this.TxtBox_Output = new System.Windows.Forms.TextBox();
             this.Btn_StartScan = new System.Windows.Forms.Button();
             this.EinstellungTab = new System.Windows.Forms.TabPage();
+            this.tbx_ServerPWLinux = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbx_UserNameLinux = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_laden = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,9 +69,6 @@
             this.Btn_SaveReg = new System.Windows.Forms.Button();
             this.timerNetScan = new System.Windows.Forms.Timer(this.components);
             this.cNetworkScanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbx_UserNameLinux = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tbx_ServerPWLinux = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.StartTab.SuspendLayout();
             this.statusStrip2.SuspendLayout();
@@ -303,6 +303,30 @@
             this.EinstellungTab.Text = "Einstellung";
             this.EinstellungTab.UseVisualStyleBackColor = true;
             // 
+            // tbx_ServerPWLinux
+            // 
+            this.tbx_ServerPWLinux.Location = new System.Drawing.Point(206, 135);
+            this.tbx_ServerPWLinux.Name = "tbx_ServerPWLinux";
+            this.tbx_ServerPWLinux.Size = new System.Drawing.Size(144, 20);
+            this.tbx_ServerPWLinux.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(203, 117);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(115, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Server Password Linux";
+            // 
+            // tbx_UserNameLinux
+            // 
+            this.tbx_UserNameLinux.Location = new System.Drawing.Point(206, 82);
+            this.tbx_UserNameLinux.Name = "tbx_UserNameLinux";
+            this.tbx_UserNameLinux.Size = new System.Drawing.Size(144, 20);
+            this.tbx_UserNameLinux.TabIndex = 14;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -432,30 +456,6 @@
             // cNetworkScanBindingSource
             // 
             this.cNetworkScanBindingSource.DataSource = typeof(TurnOn.CNetworkScan);
-            // 
-            // tbx_UserNameLinux
-            // 
-            this.tbx_UserNameLinux.Location = new System.Drawing.Point(206, 82);
-            this.tbx_UserNameLinux.Name = "tbx_UserNameLinux";
-            this.tbx_UserNameLinux.Size = new System.Drawing.Size(144, 20);
-            this.tbx_UserNameLinux.TabIndex = 14;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(203, 117);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Server Password Linux";
-            // 
-            // tbx_ServerPWLinux
-            // 
-            this.tbx_ServerPWLinux.Location = new System.Drawing.Point(206, 135);
-            this.tbx_ServerPWLinux.Name = "tbx_ServerPWLinux";
-            this.tbx_ServerPWLinux.Size = new System.Drawing.Size(144, 20);
-            this.tbx_ServerPWLinux.TabIndex = 16;
             // 
             // Form1
             // 
