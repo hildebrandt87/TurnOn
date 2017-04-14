@@ -28,9 +28,9 @@ namespace TurnOn
 
         async void aTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-        
+
             try
-            {              
+            {
                 IPHostEntry hostName = Dns.GetHostByName(CReg.Get_Servername());
                 //InvokeRequired dient nur als Abfrage damit der Thread Save ausgeführt werden kann !
                 //Sehr wichtig da eigentlich kein fremder thread auf den thread zugreifen kann welcher die steurelemente erstellt hat
@@ -146,14 +146,14 @@ namespace TurnOn
 
             CNetworkScan StartScan = new CNetworkScan();
             StartScan.StartIP = Convert.ToInt16(start_ip_txtbox.Text);
-            StartScan.EndIP =Convert.ToInt32(end_ip_txtbox.Text);
+            StartScan.EndIP = Convert.ToInt32(end_ip_txtbox.Text);
             StartScan.IpPrefix = txtnx_iprange.Text;
 
-            Task < bool > t1 = StartScan.SearchNetwork(this.TxtBox_Output,progressBarNetScan);
+            Task<bool> t1 = StartScan.SearchNetwork(this.TxtBox_Output, progressBarNetScan);
             bool check = await t1;
             StartScan = null;
             timerNetScan.Stop();
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -170,8 +170,22 @@ namespace TurnOn
         private void btnShutOmv_click(object sender, EventArgs e)
         {
             // OS Linux herunterfahren
+            string servername="";
+            string linuxusername="";
+            string linuxpw="";
+            try
+            {
+                servername = CReg.Get_Servername();
+                linuxusername = CReg.Get_LinuxUsername();
+                linuxpw = CReg.Get_LinuxServerPW();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Daten können nicht eingelesen werden");
+            }
+
             CShutDown shutLinuxvdown = new CShutDown();
-            shutLinuxvdown.EndLinux(CReg.Get_Servername(), CReg.Get_Username(), CReg.Get_Password());
+            shutLinuxvdown.EndLinux(servername, linuxusername, linuxpw);
             shutLinuxvdown = null;
         }
 
