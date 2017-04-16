@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TurnOn.exe" size="404480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TurnOn.exe" size="406016">
       <assemblyIdentity name="TurnOn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Of+k3pzHzomfrqfCiDdmfznmyxoVkcQLcKjsyEU0gsc=</dsig:DigestValue>
+        <dsig:DigestValue>nz8qGqoarjaSP2Y+JH/8gSI4lb6xm3BDpNuhLNZ3LA8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4lZXaYXTZLu1L07MWqJ29TYQ3COetj8QMKexxk1nou4=</dsig:DigestValue>
+        <dsig:DigestValue>1ZjLZNyxuiC5URNsFqnyAuOiTI7lsJq0AmvE1G/fzAE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

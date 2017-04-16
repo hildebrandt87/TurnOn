@@ -157,8 +157,15 @@ namespace TurnOn
                 RegistryKey Key = BaseKey.OpenSubKey("TurnOnSettings");
 
                 //Werte holen
-                name = Key.GetValue("UsernameLinux").ToString();
-
+                if(Key.GetValue("UsernameLinux")!= null)
+                {
+                    name = Key.GetValue("UsernameLinux").ToString();
+                }
+                else
+                {
+                    name = "";
+                }
+                
             }
             catch (Exception ex)
             {
@@ -178,8 +185,15 @@ namespace TurnOn
                 RegistryKey Key = BaseKey.OpenSubKey("TurnOnSettings");
 
                 //Werte holen
-                name = Key.GetValue("ServerPWLinux").ToString();
-
+                if (Key.GetValue("ServerPWLinux") != null)
+                {
+                    name = Key.GetValue("ServerPWLinux").ToString();
+                }
+                else
+                {
+                    name = "";
+                }
+                //name = Key.GetValue("ServerPWLinux").ToString();s
             }
             catch (Exception ex)
             {
