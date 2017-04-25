@@ -40,8 +40,6 @@ namespace TurnOn
             return true;
 
         }
-
-        //DIese Methode kann eigentlich gelöscht werden
         public static string[] GetAll_RegistryKeys()
         {
             string[] Daten = new string[5];
@@ -57,11 +55,11 @@ namespace TurnOn
                 Daten[2] = Key.GetValue("Password").ToString();
                 Daten[3] = Key.GetValue("UsernameLinux").ToString();
                 Daten[4] = Key.GetValue("ServerPWLinux").ToString();
-
+          
             }
-            catch (Exception)
+            catch (Exception ex)
             {
- 
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
             }
 
             return Daten;
