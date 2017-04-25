@@ -453,10 +453,6 @@
             // 
             this.timerNetScan.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // cNetworkScanBindingSource
-            // 
-            this.cNetworkScanBindingSource.DataSource = typeof(TurnOn.CNetworkScan);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

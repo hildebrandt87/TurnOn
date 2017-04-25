@@ -12,14 +12,12 @@ namespace TurnOn
     class CShutDown
     {
         public void  EndWindows(string Servername,string Username,string Password)
-        {
-            
+        {           
             //Milestone: Aktuell lässt sich mit dieser Funktion lediglich WIndows Rechner herunterfahren.
             ManagementScope Scope = null;
             ConnectionOptions ConnOptions = null;
             ObjectQuery ObjQuery = null;
             ManagementObjectSearcher ObjSearcher = null;
-
             try
             {
                 ConnOptions = new ConnectionOptions();
@@ -32,7 +30,6 @@ namespace TurnOn
 
                 //name = txb_EingestelltServer.Text;
                 Scope = new ManagementScope(@"\\" + Servername + @"\ROOT\CIMV2", ConnOptions);
-
                 Scope.Connect();
 
                 ObjQuery = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
@@ -43,12 +40,9 @@ namespace TurnOn
 
                     MessageBox.Show("Caption = " + operatingSystem.GetPropertyValue("Caption"));
                     MessageBox.Show("Version = " + operatingSystem.GetPropertyValue("Version"));
-
                     //Shutdown
                     ManagementBaseObject outParams = operatingSystem.InvokeMethod("Shutdown", null, null);
-
                 }
-
             }
             catch (Exception ex)
             {
