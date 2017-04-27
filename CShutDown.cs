@@ -48,15 +48,11 @@ namespace TurnOn
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         public void EndLinux(string Servername, string Username, string Password)
         {
             //Achtung: auf omv oder Linux system muss ssh aktiv sein 
-            //Benutzername zum Herunterfahren mittels SSH muss root sein !
-            //Hier sollte über die GUI nochmals ein neues Feld hinzugefügt werden (Only OMV/Linux)
-
             using (var client = new SshClient(Servername, Username, Password))
             { 
                 client.Connect();

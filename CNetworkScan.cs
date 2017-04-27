@@ -61,10 +61,6 @@ namespace TurnOn
         [DllImport("iphlpapi.dll", ExactSpelling = true)]
         public static extern int SendARP(int DestIP, int SrcIP, [Out] byte[] pMacAddr, ref int PhyAddrLen);
 
-        public CNetworkScan()
-        {
-        }
-
         public async Task <bool> SearchNetwork(TextBox TxtBox_Ausgabe, ProgressBar progressNetScan)
         {
             TxtBox_Ausgabe.Clear();
