@@ -35,7 +35,6 @@ namespace TurnOn
                 return false;
             }
 
-
             Key.Close();
             return true;
 
